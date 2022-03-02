@@ -4,7 +4,7 @@ const path = require("path")
 
 class Movie {
   constructor() {
-    this.movieDb = knex(
+    this.db = knex(
       this.movieDbConfig = {
         client: "mysql",
         connection: {
@@ -22,8 +22,8 @@ class Movie {
 
     // const where = name ? { name } : {}
 
-    // const movies = await this.movieDb("movies").where(where)
-    const movies = await this.movieDb("movies")
+    // const movies = await this.db("movies").where(where)
+    const movies = await this.db("movies")
       .whereILike("name", `%${name}%`)
       .orderBy(order, "asc")
 
@@ -31,7 +31,7 @@ class Movie {
   }
 
   async getById(id) {
-    const movie = await this.movieDb("movies")
+    const movie = await this.db("movies")
       .where({ id })
       .first()
 
@@ -39,7 +39,7 @@ class Movie {
   }
 
   async exists(id) {
-    const result = await this.movieDb("movies")
+    const result = await this.db("movies")
       .where({ id })
       .count("id as count")
       .first()
@@ -51,13 +51,13 @@ class Movie {
 
   async update(id, body) {
     console.log(id, body)
-    await this.movieDb("movies")
+    await this.db("movies")
       .where({ id })
       .update(body)
   }
 
   async create (body) {
-    const result = await this.movieDb("movies")
+    const result = await this.db("movies")
       .insert(body)
 
     console.log(result[0])
@@ -66,14 +66,14 @@ class Movie {
   }
 
   async delete (id) {
-    const result = await this.movieDb("movies").where({ id }).del()
+    const result = await this.db("movies").where({ id }).del()
     console.log(result)
   }
 
   async loadData () {
     try {
-      await this.movieDb.schema.dropTableIfExists("movies")
-      await this.movieDb.schema.createTable("movies", (table) => {
+      await this.db.schema.dropTableIfExists("movies")
+      await this.db.schema.createTable("movies", (table) => {
         table.increments("id")
         table.string("name")
         table.integer("awards")
@@ -85,7 +85,7 @@ class Movie {
 
       for (const movie of movies) {
         console.log(movie)
-        await this.movieDb("movies").insert(movie)
+        await this.db("movies").insert(movie)
       }
     } catch (e) {
       throw e

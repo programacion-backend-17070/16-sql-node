@@ -5,7 +5,7 @@
   const app = express()
   const movieRouter = require("./routes/movies")
   try {
-    // await Movie.loadData()
+    await Movie.loadData()
     console.log("se creo la tabla")
     app.use(express.json()) // JSON parse
 

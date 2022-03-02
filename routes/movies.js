@@ -7,7 +7,8 @@ const router = Router()
 //  get: (req, res) => {}
 // }
 router.get("/", async (req, res) => {
-  const movies = await Movie.getAll()
+  const { name } = req.query
+  const movies = await Movie.getAll(name)
   res.send(movies)
 })
 
@@ -35,7 +36,8 @@ router.post("/", async (req, res) => {
   res.status(201).send({ id })
 })
 router.delete("/:id", async (req, res) => {
-
+  const { id } = req.params
+  await Movie.delete(id)
   res.sendStatus(200)
 })
 

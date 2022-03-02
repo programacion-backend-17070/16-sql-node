@@ -1,10 +1,9 @@
+// IIFE
 (async () => {
   const express = require("express")
   const app = express()
 
   try {
-    await Movie.loadData()
-
     app.use(express.json())
 
     app.get("/", (rq, rs) => rs.send("Hola"))

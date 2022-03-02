@@ -1,0 +1,47 @@
+[
+  {
+      "name": "Shrek",
+      "awards": 10,
+      "director": "Andrew Adamson"
+  },
+  {
+      "name": "Good Fellas",
+      "awards": 1,
+      "director": "Martin Scorsese"
+  },
+  {
+      "name": "Spiderman",
+      "awards": 0,
+      "director": "Sam Raimi"
+  },
+  {
+      "name": "Interstellar",
+      "awards": 1,
+      "director": "Christopher Nolan"
+  },
+  {
+      "name": "Tenet",
+      "awards": 0,
+      "director": "Christopher Nolan"
+  },
+  {
+      "name": "Matrix",
+      "awards": 4,
+      "director": "Wachowski"
+  },
+  {
+      "name": "Super 8",
+      "awards": 0,
+      "director": "J. J.  Abrams"
+  },
+  {
+      "name": "The Grand Hotel Budapest",
+      "awards": 4,
+      "director": "Wes Anderson"
+  },
+  {
+      "name": "Mean Girls",
+      "awards": 0,
+      "director": "Mark Waters"
+  }
+]

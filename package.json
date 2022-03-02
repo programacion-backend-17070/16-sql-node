@@ -2,20 +2,15 @@
   "name": "16-sql-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "init": "node ./util/init.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vscode/sqlite3": "^5.0.7",
-    "express": "^4.17.3",
-    "knex": "^1.0.3",
-    "mysql": "^2.18.1",
-    "sqlite3": "^5.0.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

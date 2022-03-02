@@ -1,7 +1,5 @@
 (async () => {
   const express = require("express")
-  const Movie = require("./models/movie")
-  const movieRouter = require("./routes/movies")
   const app = express()
 
   try {
@@ -10,8 +8,6 @@
     app.use(express.json())
 
     app.get("/", (rq, rs) => rs.send("Hola"))
-
-    app.use("/api/movies", movieRouter)
 
     app.listen(
       8080,
